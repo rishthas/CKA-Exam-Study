@@ -98,7 +98,7 @@ Kubelet:
 Kube-Proxy:
 
 - By default every pod in a cluster can reach another pod 
-- Pod can reahc another pod based on its IP by networking
+- Pod can reach another pod based on its IP by networking
 - creating a service to expose the service 
 - Service has an ip assigned 
 - when a pod tries to reach the service it forward traffic to backend pod through the pod
@@ -122,7 +122,7 @@ Pod yml files always contain the following field, this is mandatory:
 - apiVersion: version of k8s api used to create the object, must use the correct version for now using v1
 - Kind: type of object for example pod, replica set, service etc
 - Metadata: data about the object, names, labels etc.
-- Spec: depending on the object additional information abouyt the object, spec is a dictionary 
+- Spec: depending on the object additional information about the object, spec is a dictionary 
 
 Practice test:
 
@@ -136,7 +136,7 @@ How to check which image is running on pod?
 kubectl desribe pods -n default xxxx 
 
 which node is the pods placed on?
-this will tell you via the describe pods commands, you than type in kubectl get nodes 
+this will tell you via the describe pods commands, you then type in kubectl get nodes 
 
 how many containers are running inside that pod?
 describe command again however there maybe an easier command?
@@ -247,7 +247,7 @@ selector:
 Labels and Selectors:
   
 - for example If we deploy 3 instances of our front end app as 3 pods, we like to create replication-controllers/replicasets
-- replicset monitor pods and if they fail, it will deploy new ones
+- replicaset monitor pods and if they fail, it will deploy new ones
 - it knows how to monitor pods via labelling as labels are referenced for the pods. 
 - can use the kubectl replace -f replicaset-definition.yml command to update what was done. 
 - or can also run this commanmd as imperitive
@@ -277,7 +277,7 @@ Kubernetes deployments:
 - When upgrading kubernetes cluster, you dont do it all in one go however you do it one by one. 
 - known as rolling updates
 - should be able to roll back changes also
-- deployments work higher, provides upgrading underlying instances seemlessly 
+- deployments work higher, provides upgrading underlying instances seamlessly 
 - the kubectl deployment automatically creates a replica set
 - kubectl get all 
 
