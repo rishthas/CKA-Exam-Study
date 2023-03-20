@@ -2,7 +2,7 @@
 
 ## Kubernetes Master Componenets:
 
-Master node has  the below list of componenets. 
+Master node has  the below list of components. 
 - **ETCD**: 
   - Stores cluster information and state of the Cluster.
   - ETCD stores in key and value pair. 
@@ -37,12 +37,61 @@ Master node has  the below list of componenets.
 - **Container Runtime**: 
   - Software which runs the containerised application. 
 
-ETCD For Beginners:
+# POD
+- Container/s are encapsulate to POD in K8s
+- Containers in POD can communicate as localhost.
+  
+  - `kubectl run nginx --image=nginx`
+  - `kubectls get pods`
+  - `kubectl describe pod nginx`
+  - `kubectl get pods -o wide`
+
+
+# YAML
+- Represents configuration data 
+- Key value pair  
+![image](https://user-images.githubusercontent.com/64813710/226235784-02264351-d23c-4f04-ac5d-867975052cfd.png)
+
+- Array List  
+![image](https://user-images.githubusercontent.com/64813710/226235623-a99438fc-cc6e-4108-9466-878b16ec86ed.png)
+
+- Dictionary/Map  
+![image](https://user-images.githubusercontent.com/64813710/226235870-b601c7f7-5be7-4884-9392-40aaed70f1e3.png)
+
+- Need to have same number of spaces for list and dictionary  
+- ![image](https://user-images.githubusercontent.com/64813710/226236036-7b5ea8a7-3221-4a2d-bbb7-575b97c7bdf7.png)
+
+
+# PODS in YAML
+
+- pod-defination.yaml
+  - apiVersion 
+  - kind
+  - metadata
+  - spec  
+  
+![image](https://user-images.githubusercontent.com/64813710/226236832-601c327f-80bd-492a-9980-c774b34fe03e.png)
+
+# Setups
+  ## Minikube
+  - All the components into a single image ISO online.
+  - Must have Hypervisor like Virtualbox.
+  ## Kubeadmin
+  - kubeadmin takes care all step.
+  - Must have
+    1. Multiple system or virtual machine
+    2. docker installed in all nodes.
+    3. kubeadmin installed in all the node.
+    4. initialize master node.
+    5. POD network.
+    6. Join worker node to master
+
+# ETCD For Beginners:
 
 - ETCD is a Key Value store
 - Used to store and restore 
 
-ETCD In Kubernetes:
+## ETCD In Kubernetes:
 
 List the following componenets
 - Nodes
