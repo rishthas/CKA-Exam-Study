@@ -72,6 +72,24 @@ Master node has  the below list of components.
   
 ![image](https://user-images.githubusercontent.com/64813710/226236832-601c327f-80bd-492a-9980-c774b34fe03e.png)
 
+## Replication Controller and ReplicaSet
+- **Controllers** are brain for K8s
+- **Replication Controller**
+  - helps run multiple instance of a POD
+  - also automatically bring up the  POD if the POD fails.
+  - load balancing and scaling
+  - can span multiple nodes.
+  - **ReplicaSet** is the new one and recomentent.
+  - ![image](https://user-images.githubusercontent.com/64813710/226240021-5ba04e45-05a3-4050-99ba-60472fb73cef.png)
+  - ![image](https://user-images.githubusercontent.com/64813710/226240625-f57db92d-09fc-4622-a640-e0a7af30fba3.png)
+- **Scale Replica**
+- Change replica in yaml and run 
+  - `kubectl replace -f replicset-definition.yaml`
+- `kubectl scale --replicas=6 -f eplicset-definition.yaml`
+
+**Deployments*** *continue*
+
+
 # Setups
   ## Minikube
   - All the components into a single image ISO online.
