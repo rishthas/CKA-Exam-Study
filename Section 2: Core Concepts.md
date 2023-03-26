@@ -87,7 +87,12 @@ Master node has  the below list of components.
   - `kubectl replace -f replicset-definition.yaml`
 - `kubectl scale --replicas=6 -f eplicset-definition.yaml`
 
-**Deployments*** *continue*
+**Deployments**
+- Upgrade policy.
+- over replica set.
+- yml same as Replica set, but different 
+  - `kind: Deployment`
+  
 
 
 # Setups
