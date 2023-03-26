@@ -116,6 +116,16 @@ Master node has  the below list of components.
   #### Rollback
   - ` kubectl rollout undo <deployment tag>`
 
+# Networking in K8s
+- node has an IP 
+- POD is has its own internal IP
+
+# Services
+  - Enable communicatation within k8s cluster.
+  - Enable loose coupling.
+  
+
+
 # Setups
   ## Minikube
   - All the components into a single image ISO online.
