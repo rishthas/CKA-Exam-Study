@@ -83,7 +83,7 @@ Master node has  the below list of components.
 - is the new one and recomentent.
   - ![image](https://user-images.githubusercontent.com/64813710/226240021-5ba04e45-05a3-4050-99ba-60472fb73cef.png)
   - ![image](https://user-images.githubusercontent.com/64813710/226240625-f57db92d-09fc-4622-a640-e0a7af30fba3.png)
-- **Scale Replica**https://github.com/rishthas/CKA-Exam-Study.git
+- **Scale Replica**
 - Change replica in yaml and run 
   - `kubectl replace -f replicset-definition.yaml`
 - `kubectl scale --replicas=6 -f eplicset-definition.yaml`
@@ -95,12 +95,26 @@ Master node has  the below list of components.
   - `kind: Deployment`
     > kubectl get all
     > To get all the objects
-
-
-
-
-
-
+  #### Update and Rollback
+  - First deployment will trigger furst rollout
+  - K8s tracks each updates as a rollout.
+  - Command to find the status of the rollout
+    - ` kubectl rollout status  <deployement tag>`
+  - For history
+    - ` kubectl rollout history <deployment tag>`
+  #### Deployment Strategy
+  - ##### Recreate
+    - Destroy the current deployement and deploy the new version.
+      - The application will be down for this window.
+  - ##### Rolling
+    - Default.
+    - One by One each pod will be brought up and deleted.
+  - ` kubectl apply -f <deployemnt file> `
+  - ` kubetcl set image <new image> `
+    ` kubectl describe <deployemnt> `
+  
+  #### Rollback
+  - ` kubectl rollout undo <deployment tag>`
 
 # Setups
   ## Minikube
