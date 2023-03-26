@@ -92,7 +92,10 @@ Master node has  the below list of components.
 - over replica set.
 - yml same as Replica set, but different 
   - `kind: Deployment`
-  
+> kubectl get all
+
+
+
 
 
 # Setups
