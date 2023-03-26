@@ -74,25 +74,29 @@ Master node has  the below list of components.
 
 ## Replication Controller and ReplicaSet
 - **Controllers** are brain for K8s
-- **Replication Controller**
+### Replication Controller
   - helps run multiple instance of a POD
   - also automatically bring up the  POD if the POD fails.
   - load balancing and scaling
   - can span multiple nodes.
-  - **ReplicaSet** is the new one and recomentent.
+### ReplicaSet 
+- is the new one and recomentent.
   - ![image](https://user-images.githubusercontent.com/64813710/226240021-5ba04e45-05a3-4050-99ba-60472fb73cef.png)
   - ![image](https://user-images.githubusercontent.com/64813710/226240625-f57db92d-09fc-4622-a640-e0a7af30fba3.png)
-- **Scale Replica**
+- **Scale Replica**https://github.com/rishthas/CKA-Exam-Study.git
 - Change replica in yaml and run 
   - `kubectl replace -f replicset-definition.yaml`
 - `kubectl scale --replicas=6 -f eplicset-definition.yaml`
 
-**Deployments**
+### Deployments
 - Upgrade policy.
 - over replica set.
 - yml same as Replica set, but different 
   - `kind: Deployment`
-> kubectl get all
+    > kubectl get all
+    > To get all the objects
+
+
 
 
 
