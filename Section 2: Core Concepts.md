@@ -140,10 +140,22 @@ Master node has  the below list of components.
     5. POD network.
     6. Join worker node to master
 
-# ETCD For Beginners:
+# ETCD
+## ETCD For Beginners:
 
 - ETCD is a Key Value store
 - Used to store and restore 
+### Install ETCD
+1. Download Binaries
+2. Extract
+3. Run ETCD Services
+
+- Default port `2379`
+- Default client is
+  - `etcdctl`
+  - `etcdctl set key1 value1`
+  - `etcdctl get key1`
+  - `etcdctl --version`
 
 ## ETCD In Kubernetes:
 
@@ -156,24 +168,29 @@ List the following componenets
 - Roles
 - Bindings
 - Others
-
 - All information is updated on the ETCD Cluster
-
-- Uses port 2379
-
+- Uses port 2379 `--adevertise-client-urls https://${INTERNAL_IP}:2379`
 - ETCD in HA Enviroment, can have multiple ETCD in a Cluster. 
+  - `--initial-cluster controller-0=https://${IP}:2379,controller-2=https://${IP}:2379`  in HA
+- **kubeadm**
+ - `kubectl get pods -n kube-system`
 
 
-Kube-API Server:
+
+
+# Kube-API Server:
 
 - Primary mgmt component in Kubernetes
 
 1. When you run a Kubectl command it reaches the Kube-API Server. The Kube-API Server first validates the request.
-2. The Kube-API retrieves the data from the ETCD Cluster and responds back. 
-3. Or you can simply run a post request. 
-
-The Kube-Scheduler continously monitors the API Server and if a new pod with no node assigned to it, the schedulre identifies a node to put the pod on-to
-and communicats that back to the API Server. tje API Server updates the information in the ETCD Cluster. The API Server then passes information to the Kubelet to create the pod on the new node, the kublet instructs the container runtime to deploy the image, The Kubelet then updates the API-Server and then the ETCD Is updates the API-Server. 
+2. The Kube-API retrieves the data from the ETCD Cluster and responds back. Or you can simply run a post request. 
+3. The Kube-Scheduler continously monitors the API Server and if a new pod with no node assigned to it, 
+4. the scheduler identifies a node to put the pod on it and communicats that back to the API Server. 
+5. the API Server updates the information in the ETCD Cluster. 
+6. The API Server then passes information to the Kubelet to create the pod on the new node, 
+7. the kublet instructs the container runtime to deploy the image, 
+8. The Kubelet then updates the API-Server 
+9. then the ETCD Is updated by the API-Server. 
 
 Kube-Api Server: Does the following,
 
