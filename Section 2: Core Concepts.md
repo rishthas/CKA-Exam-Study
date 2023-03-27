@@ -3,38 +3,38 @@
 ## Kubernetes Master Componenets:
 
 Master node has  the below list of components. 
-- **ETCD**: 
+- ### ETCD : 
   - Stores cluster information and state of the Cluster.
   - ETCD stores in key and value pair. 
 
-- **API Server**: 
+- ### API Server: 
   - Responsible for all orchastration operations with the cluster. 
   - Exposing Kube-API/Mgmt
   - Monitors state of Cluster
   - Gives work to worker nodes
 
-- **Controller Manager**:
-  - Node-controller
+- ### Controller Manager:
+  - #### Node-controller
     - Takes care of nodes, onboarding new nodes to cluster and handling situation where nodes become unavailable and gets destroyed. 
 
-  - Replication-Controller
+  - #### Replication-Controller
     - Ensures rights amounts of containers are running at all times in replication group according to the replication configurations. 
 
-- **Kube Scheduler**: 
-  - Identfies the right node to place the container based on container resource requirements, taints and tolerations etc. 
+- ### Kube Scheduler: 
+  - Identfies the right node to place the container based on container resource requirements, taints and tolerations ,capacity etc. 
 
 
 ## Worker nodes:
 
-- **Kubelet**: 
+- ### Kubelet: 
   - Agents running on each node of the cluser
   - Responsible for liasing with the master node (api-server), sending reports back to master on status of cluster etc. 
   - The API -Server Periodically fetches status reports from the kubelet.
 
-- **Kube-Proxy**: 
+- ### Kube-Proxy: 
   - Ensures network rules are in place, rules are in place to reach services within the cluster.
 
-- **Container Runtime**: 
+- ### Container Runtime: 
   - Software which runs the containerised application. 
 
 # POD
